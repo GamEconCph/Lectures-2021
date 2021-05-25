@@ -168,10 +168,7 @@ def find_undominated_actions(U_in, i, A, DOPRINT=False):
                 break # exit search: enough that we have found one 
         
         # 2.c append or not 
-        if DOMINATED: 
-            if DOPRINT: 
-                print(f'Player {i+1}: {A[ia]} is dominated by {A[ia_]}')
-        else: 
+        if not DOMINATED: 
             AA.append(A[ia])
             IA.append(ia)
             
