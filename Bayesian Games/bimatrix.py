@@ -50,24 +50,6 @@ def solve_zerosum_with_linprog(U):
     alpha = sol.x[1:]
     return alpha
 
-def plot_best_responses(br1, br2, A): 
-    """plot_best_responses: pretty plot for a bimatrix game with pure strategies 
-    """
-    ax = plt.subplot(111)
-    ax.plot(br1[:, 1], br1[:, 0], 'o', label='$BR^1(a^2)$'); 
-    ax.plot(br2[:, 0], br2[:, 1], 'x', label='$BR^2(a^1)$'); 
-    ax.set_xlabel('$a^1$'); ax.set_ylabel('$a^2$'); 
-    ax.legend(loc=(1.04, 0.9))
-    A1 = range(len(A[0]))
-    A2 = range(len(A[1]))
-    ax.set_xticks(A1); 
-    ax.set_xticklabels(A[0]); 
-    ax.set_yticks(A2); 
-    ax.set_yticklabels(A[1]); 
-    ax.grid(which='major', color='gray', linestyle=':', axis='both'); 
-    ax.set_xlim((0-.1, len(A[0])-.9)); 
-    ax.set_ylim((0-.1, len(A[1])-.9)); 
-    return ax
 
 def best_response(U, i): 
     """best_response(): 
